@@ -1,0 +1,55 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+<div class="local-roletheme-simulation">
+    {{#hasissues}}
+        {{#issues}}
+            <div class="alert alert-warning">{{message}}</div>
+        {{/issues}}
+    {{/hasissues}}
+
+    {{#showokmessage}}
+        <div class="alert alert-success">{{okmessage}}</div>
+    {{/showokmessage}}
+
+    {{{formhtml}}}
+
+    {{#hasresult}}
+        <h3>{{resulttitle}}</h3>
+        <div class="table-responsive">
+            <table class="generaltable table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">{{headers.setting}}</th>
+                        <th scope="col">{{headers.value}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#rows}}
+                        <tr>
+                            <th scope="row">{{label}}</th>
+                            <td>{{value}}</td>
+                        </tr>
+                    {{/rows}}
+                </tbody>
+            </table>
+        </div>
+    {{/hasresult}}
+
+    {{#showempty}}
+        <div class="alert alert-info">{{emptymessage}}</div>
+    {{/showempty}}
+</div>
