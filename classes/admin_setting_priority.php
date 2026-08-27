@@ -25,7 +25,8 @@ require_once($CFG->dirroot . '/local/roletheme/locallib.php');
  * Custom admin setting for validating role priority configuration.
  *
  * @package   local_roletheme
- * @copyright 2026 Pedro Lois
+ * @author    Pedro Luis Garcia Leiva
+ * @copyright 2026 Pedro Lois {@link https://github.com/pedrolois}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_setting_priority extends \admin_setting_configtext {
