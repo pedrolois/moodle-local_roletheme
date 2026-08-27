@@ -24,7 +24,8 @@ require_once($CFG->dirroot . '/lib/adminlib.php');
  * Compact textarea setting for cohort map configuration.
  *
  * @package   local_roletheme
- * @copyright 2026 Pedro Lois
+ * @author    Pedro Luis Garcia Leiva
+ * @copyright 2026 Pedro Lois {@link https://github.com/pedrolois}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class admin_setting_cohortmap extends \admin_setting_configtextarea {

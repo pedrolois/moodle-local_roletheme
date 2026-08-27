@@ -35,7 +35,8 @@ require_once(__DIR__ . '/../locallib.php');
  * @covers ::local_roletheme_resolve_theme_for_user
  * @covers ::local_roletheme_explain_theme_for_user
  * @covers ::local_roletheme_apply_theme_for_user
- * @copyright 2026 Pedro Lois
+ * @author    Pedro Luis Garcia Leiva
+ * @copyright 2026 Pedro Lois {@link https://github.com/pedrolois}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class locallib_test extends advanced_testcase {
