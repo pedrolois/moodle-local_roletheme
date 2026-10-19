@@ -440,7 +440,7 @@ function local_roletheme_apply_theme_for_user(int $userid): ?string {
     $themename = local_roletheme_resolve_theme_for_user($userid);
     $userupdate = (object) [
         'id' => $userid,
-        'theme' => $themename ?: null,
+        'theme' => $themename ?: '', // The column is NOT NULL: empty means the site theme.
     ];
     if (method_exists(\core\user::class, 'update_user')) {
         // Moodle 5.3+: user_update_user() is deprecated (MDL-82650).
@@ -451,7 +451,7 @@ function local_roletheme_apply_theme_for_user(int $userid): ?string {
     }
 
     if (isset($USER) && (int) $USER->id === $userid) {
-        $USER->theme = $themename ?: null;
+        $USER->theme = $themename ?: '';
     }
 
     unset_user_preference('theme', $userid);
