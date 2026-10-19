@@ -2,6 +2,13 @@
 
 All notable changes to `local_roletheme` should be documented in this file.
 
+## 2026-10-19 - Version 1.1.0 (2026101900)
+
+- Added Moodle 5.0 - 5.3 support (`supported` is now `[405, 503]`).
+- Use `\core\user::update_user()` on Moodle 5.3+, where `user_update_user()` is deprecated (MDL-82650).
+  Older versions keep using `user_update_user()`.
+- Fixed `requires` to the Moodle 4.5 version number (2024100700).
+
 ## 2026-05-06 - Repository readiness
 
 - Added `release`, `maturity`, and `supported` metadata to `version.php`.

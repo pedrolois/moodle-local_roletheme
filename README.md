@@ -16,7 +16,7 @@ The plugin is designed to be predictable and safe for Moodle 4.5+. It does not c
 
 ## Requirements
 
-- Moodle 4.5 or later.
+- Moodle 4.5 or later (tested up to Moodle 5.3).
 - User themes must be enabled in `config.php`:
 
 ```php
