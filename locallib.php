@@ -437,14 +437,18 @@ function local_roletheme_resolve_theme_for_user(int $userid, ?\context $pagecont
 function local_roletheme_apply_theme_for_user(int $userid): ?string {
     global $CFG, $SESSION, $USER;
 
-    require_once($CFG->dirroot . '/user/lib.php');
-
     $themename = local_roletheme_resolve_theme_for_user($userid);
     $userupdate = (object) [
         'id' => $userid,
         'theme' => $themename ?: null,
     ];
-    user_update_user($userupdate, false);
+    if (method_exists(\core\user::class, 'update_user')) {
+        // Moodle 5.3+: user_update_user() is deprecated (MDL-82650).
+        \core\user::update_user($userupdate, false);
+    } else {
+        require_once($CFG->dirroot . '/user/lib.php');
+        user_update_user($userupdate, false);
+    }
 
     if (isset($USER) && (int) $USER->id === $userid) {
         $USER->theme = $themename ?: null;
