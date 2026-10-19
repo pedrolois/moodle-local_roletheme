@@ -2,6 +2,12 @@
 
 All notable changes to `local_roletheme` should be documented in this file.
 
+## 2026-10-19 - Version 1.1.1 (2026101901)
+
+- Fixed: when no role or cohort mapping applies, the user theme is cleared with an empty string instead of
+  NULL. On Moodle 5.3 `\core\user::update_user()` rejected NULL ("Column 'theme' cannot be null") and the
+  login observer failed.
+
 ## 2026-10-19 - Version 1.1.0 (2026101900)
 
 - Added Moodle 5.0 - 5.3 support (`supported` is now `[405, 503]`).
