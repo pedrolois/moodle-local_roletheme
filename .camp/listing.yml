@@ -1,0 +1,20 @@
+# camp listing manifest (https://github.com/camp-registry/camp-docs/blob/main/AUTHORS.md).
+# Ingested and hash-pinned by camp at each tagged release.
+
+name: Role-based theme
+summary: Sets each user's preferred theme from configured role mappings, with optional cohort fallbacks.
+description: |
+  Assigns users a theme based on their roles, with cohorts as an optional
+  fallback. It updates the stored preferred theme at login and when role
+  assignments change, instead of forcing a theme on every page.
+
+  - Role-to-theme mappings with an explicit priority order
+  - Cohort idnumber mappings as a fallback, with ordered cohort priority
+  - Theme Resolution Simulator page for administrators
+  - Daily scheduled task to resynchronise theme assignments
+  - Locks the profile theme selector so the mapping stays authoritative
+labels:
+  - fully-free
+links:
+  docs: https://github.com/pedrolois/moodle-local_roletheme#readme
+  issues: https://github.com/pedrolois/moodle-local_roletheme/issues
